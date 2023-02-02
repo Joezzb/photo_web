@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Home</title>
+
+  </head>
+  <!-- navigator -->
+  <body>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('index') }}">登录</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{{ url_for('register') }}">注册</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('share') }}">分享</a>
+      </li>
+    </ul>
+    <div class="container">
+      <form style="margin: 100px auto" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">用户名</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">密码</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+        {% for message in get_flashed_messages() %}
+          <div class="mb-3">
+            <div class="text-danger">{{ message }}</div>
+          </div>
+        {% endfor %}
+        <div><button type="submit" class="btn btn-primary">注册</button></div>
+      </form>
+    </div>
+
+     <!-- boostrap5 插件-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--jquery-->
+    <script src="{{ url_for('static', filename='js/jquery-3.6.1.min.js') }}"></script>
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- boostrap5 插件-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <title>Home</title>
+
+  </head>
+  <body>
+    <div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">登录</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div style="text-align: center;">
+          <img class="img-fluid mb-3" id="cap_image" src="{{image}}" alt="text">
+      </div>
+
+      <div class="d-grid col-6 mx-auto mb-3"> 
+        <button id="capture" type="button" class="btn btn-outline-primary">捕获</button>
+      </div>
+      <div class="d-grid col-6 mx-auto mb-3"> 
+        <button id="renew" type="button" class="btn btn-outline-primary">刷新</button>
+      </div>
+      <div class="mb-5">
+        <div id="warn" class="text-danger text-center" > </div>
+      </div>
+    </div>
+
+     <script src="{{ url_for('static', filename='js/capture1.js') }}"></script>
+  </body>
+</html>
