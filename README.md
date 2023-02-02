@@ -1,2 +1,3 @@
 # photo_web
-A remote camera website base on mqtt.
+A remote camera website based on mqtt.\\
+boostrap5+flask
